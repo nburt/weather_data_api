@@ -17,4 +17,19 @@ describe OpenWeatherSearch do
       expect(temperature_data).to eq expected_data
     end
   end
+
+  it 'will display weather data in celsius' do
+    VCR.use_cassette('denver_weather') do
+      open_weather_client = OpenWeatherSearch.new('http://api.openweathermap.org/data/2.5')
+      temperature_data = open_weather_client.get_temperature('Denver', 'CO', 'C')
+
+      expected_data = {
+        "temp" => 22.43,
+        "temp_min" => 22.43,
+        "temp_max" => 22.43
+      }
+
+      expect(temperature_data).to eq expected_data
+    end
+  end
 end
