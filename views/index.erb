@@ -1,7 +1,7 @@
 <h1>Weather!</h1>
 <h3>Weather for <%= city %>, <%= state %></h3>
 <ul>
-  <li>Current Temperature: <%= temp_hash["temp"] %></li>
-  <li>Minimum Temperature: <%= temp_hash["temp_min"] %></li>
-  <li>Maximum Temperature: <%= temp_hash["temp_max"] %></li>
+  <li>Current Temperature: <%= temp_hash["temp"] %> <%= temperature_type %></li>
+  <li>Minimum Temperature: <%= temp_hash["temp_min"] %> <%= temperature_type %></li>
+  <li>Maximum Temperature: <%= temp_hash["temp_max"] %> <%= temperature_type %></li>
 </ul>
