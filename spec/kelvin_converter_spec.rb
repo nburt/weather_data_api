@@ -3,6 +3,11 @@ require './lib/kelvin_converter'
 
 describe KelvinConverter do
 
+  it 'can return temperature in Kelvin' do
+    kelvin_converter = KelvinConverter.new(1)
+    expect(kelvin_converter.convert('K')).to eq 1
+  end
+
   it 'can convert Kelvin to Fahrenheit' do
     kelvin_converter = KelvinConverter.new(1)
     expect(kelvin_converter.convert('F')).to eq -457.87

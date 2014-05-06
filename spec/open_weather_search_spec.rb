@@ -3,6 +3,21 @@ require './lib/open_weather_search'
 
 describe OpenWeatherSearch do
 
+  it 'will display weather data in kelvin' do
+    VCR.use_cassette('denver_weather') do
+      open_weather_client = OpenWeatherSearch.new('http://api.openweathermap.org/data/2.5')
+      temperature_data = open_weather_client.get_temperature('Denver', 'CO', 'K')
+
+      expected_data = {
+        "temp" => 295.58,
+        "temp_min" => 295.58,
+        "temp_max" => 295.58
+      }
+
+      expect(temperature_data).to eq expected_data
+    end
+  end
+
   it 'will display weather data in fahrenheit' do
     VCR.use_cassette('denver_weather') do
       open_weather_client = OpenWeatherSearch.new('http://api.openweathermap.org/data/2.5')
