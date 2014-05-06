@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/find?mode=json&q=Denver,CO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 May 2014 22:12:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Source:
+      - back
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: |
+        {"message":"accurate","cod":"200","count":1,"list":[{"id":5419384,"name":"","coord":{"lon":-104.992,"lat":39.74},"main":{"temp":295.576,"temp_min":295.576,"temp_max":295.576,"pressure":800.36,"sea_level":1005.66,"grnd_level":800.36,"humidity":27},"dt":1399413904,"wind":{"speed":2.68,"deg":161.502},"sys":{"country":"United States of America"},"clouds":{"all":44},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}]}]}
+    http_version: 
+  recorded_at: Tue, 06 May 2014 22:12:36 GMT
+recorded_with: VCR 2.9.0
