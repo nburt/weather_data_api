@@ -12,7 +12,17 @@ class OpenWeatherSearch
 
   def get_temperature(city, state, temperature_type)
     http_response = Faraday.get("#{@base_url}/find?q=#{city},#{state}&mode=json")
-    parsed_text = JSON.parse(http_response.body)
+    parsed_text = parse_text(http_response.body)
+    create_temperature_hash(parsed_text, temperature_type)
+  end
+
+  private
+
+  def parse_text(text)
+    JSON.parse(text)
+  end
+
+  def create_temperature_hash(parsed_text, temperature_type)
     temperature = {}
     parsed_text["list"].each do |weather_info|
       temperature["temp"] = KelvinConverter.new(weather_info["main"]["temp"]).convert(temperature_type)
@@ -21,5 +31,5 @@ class OpenWeatherSearch
     end
     temperature
   end
-
+  
 end
