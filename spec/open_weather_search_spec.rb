@@ -6,7 +6,7 @@ describe OpenWeatherSearch do
   it 'will display weather data in kelvin' do
     VCR.use_cassette('denver_weather') do
       open_weather_client = OpenWeatherSearch.new('http://api.openweathermap.org/data/2.5')
-      temperature_data = open_weather_client.get_temperature('Denver', 'CO', 'K')
+      temperature_data = open_weather_client.get_temperature('Denver', 'CO', 'Kelvin')
 
       expected_data = {
         "temp" => 295.58,
@@ -21,7 +21,7 @@ describe OpenWeatherSearch do
   it 'will display weather data in fahrenheit' do
     VCR.use_cassette('denver_weather') do
       open_weather_client = OpenWeatherSearch.new('http://api.openweathermap.org/data/2.5')
-      temperature_data = open_weather_client.get_temperature('Denver', 'CO', 'F')
+      temperature_data = open_weather_client.get_temperature('Denver', 'CO', 'Fahrenheit')
 
       expected_data = {
         "temp" => 72.37,
@@ -36,7 +36,7 @@ describe OpenWeatherSearch do
   it 'will display weather data in celsius' do
     VCR.use_cassette('denver_weather') do
       open_weather_client = OpenWeatherSearch.new('http://api.openweathermap.org/data/2.5')
-      temperature_data = open_weather_client.get_temperature('Denver', 'CO', 'C')
+      temperature_data = open_weather_client.get_temperature('Denver', 'CO', 'Celsius')
 
       expected_data = {
         "temp" => 22.43,

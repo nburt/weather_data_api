@@ -1,7 +1,12 @@
 <h1>Weather!</h1>
-<h3>Weather for <%= city %>, <%= state %></h3>
-<ul>
-  <li>Current Temperature: <%= temp_hash["temp"] %> <%= temperature_type %></li>
-  <li>Minimum Temperature: <%= temp_hash["temp_min"] %> <%= temperature_type %></li>
-  <li>Maximum Temperature: <%= temp_hash["temp_max"] %> <%= temperature_type %></li>
-</ul>
+
+<form action="/" method="post">
+  <input type="text" placeholder="City Name" name="city">
+  <input type="text" placeholder="State Postal Code" name="state">
+  <select name="temperature_type">
+    <option value="Kelvin">Kelvin</option>
+    <option value="Fahrenheit">Fahrenheit</option>
+    <option value="Celsius">Celsius</option>
+  </select>
+  <button type="submit">Get Temperature</button>
+</form>
