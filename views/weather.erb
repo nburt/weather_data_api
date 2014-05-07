@@ -1,7 +1,7 @@
 <h1>Current Weather for <%= city %>, <%= state %></h1>
 <ul>
-  <li>Current Temperature: <%= temp_hash["temp"] %> <%= temperature_type %></li>
-  <li>Minimum Temperature: <%= temp_hash["temp_min"] %> <%= temperature_type %></li>
-  <li>Maximum Temperature: <%= temp_hash["temp_max"] %> <%= temperature_type %></li>
+  <li>Current Temperature: <%= temp_hash["temp"] %>&deg; <%= temperature_type[0] %></li>
+  <li>Minimum Temperature: <%= temp_hash["temp_min"] %>&deg; <%= temperature_type[0] %></li>
+  <li>Maximum Temperature: <%= temp_hash["temp_max"] %>&deg; <%= temperature_type[0] %></li>
 </ul>
 <a href="/">Check Another City</a>
