@@ -1,12 +1,16 @@
 <h1>Weather!</h1>
 
-<form action="/" method="post">
+<form action="/weather" method="get">
   <input type="text" placeholder="City Name" name="city" required>
   <input type="text" placeholder="State Postal Code" name="state" required>
   <select name="temperature_type">
     <option value="Kelvin">Kelvin</option>
     <option value="Fahrenheit">Fahrenheit</option>
     <option value="Celsius">Celsius</option>
+  </select>
+  <select name="forecast_type">
+    <option value="current">Current Weather</option>
+    <option value="seven_day">Seven Day Forecast</option>
   </select>
   <button type="submit">Get Temperature</button>
 </form>

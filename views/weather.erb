@@ -1,7 +1,25 @@
-<h1>Current Weather for <%= city %>, <%= state %></h1>
-<ul>
-  <li>Current Temperature: <%= temp_hash["temp"] %>&deg; <%= temperature_type[0] %></li>
-  <li>Minimum Temperature: <%= temp_hash["temp_min"] %>&deg; <%= temperature_type[0] %></li>
-  <li>Maximum Temperature: <%= temp_hash["temp_max"] %>&deg; <%= temperature_type[0] %></li>
-</ul>
-<a href="/">Check Another City</a>
+<% if forecast_type == "current" %>
+  <h1>Current Weather for <%= city %>, <%= state %></h1>
+  <ul>
+    <li>Current Temperature: <%= temp_hash["temp"] %>&deg; <%= temperature_type[0] %></li>
+    <li>Minimum Temperature: <%= temp_hash["temp_min"] %>&deg; <%= temperature_type[0] %></li>
+    <li>Maximum Temperature: <%= temp_hash["temp_max"] %>&deg; <%= temperature_type[0] %></li>
+  </ul>
+  <a href="/">Check Another City</a>
+<% elsif forecast_type == "seven_day" %>
+  <h1>Seven Day Forecast for <%= city %>, <%= state %></h1>
+  <% counter = 0 %>
+  <% temp_hash.each do |weekday| %>
+    <ul>
+      <li>Day: <%= (Date.today + counter).strftime("%A") %></li>
+      <li>Temperature for Day: <%= weekday["day"] %>&deg; <%= temperature_type[0] %></li>
+      <li>Temperature for Night: <%= weekday["night"] %>&deg; <%= temperature_type[0] %></li>
+      <li>Minimum Temperature: <%= weekday["min"] %>&deg; <%= temperature_type[0] %></li>
+      <li>Maximum Temperature: <%= weekday["max"] %>&deg; <%= temperature_type[0] %></li>
+      <li>Weather Type: <%= weekday["weather_type"] %></li>
+      <li>Weather Description: <%= weekday["weather_description"] %></li>
+    </ul>
+    <br>
+    <% counter += 1 %>
+  <% end %>
+<% end %>

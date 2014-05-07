@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&mode=json&q=Denver,CO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 07 May 2014 14:45:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Source:
+      - back
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: |
+        {"cod":"200","message":0.0064,"city":{"id":"5419384","name":"","coord":{"lon":-104.992,"lat":39.74},"country":"United States of America","population":0},"cnt":7,"list":[{"dt":1399485600,"temp":{"day":287.44,"min":276.46,"max":287.44,"night":276.46,"eve":286.52,"morn":278.37},"pressure":828.81,"humidity":54,"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10d"}],"speed":5.51,"deg":91,"clouds":0,"rain":1},{"dt":1399572000,"temp":{"day":282.23,"min":274.82,"max":282.23,"night":276.73,"eve":280.28,"morn":274.82},"pressure":834.94,"humidity":76,"weather":[{"id":501,"main":"Rain","description":"moderate rain","icon":"10d"}],"speed":3.97,"deg":94,"clouds":12,"rain":5},{"dt":1399658400,"temp":{"day":287.21,"min":271.53,"max":288.23,"night":279.79,"eve":288.23,"morn":271.53},"pressure":807.24,"humidity":0,"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10d"}],"speed":3.56,"deg":190,"clouds":0,"rain":0.61},{"dt":1399744800,"temp":{"day":285.93,"min":276.31,"max":287.78,"night":276.31,"eve":287.78,"morn":277.95},"pressure":804.83,"humidity":0,"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01d"}],"speed":8.27,"deg":291,"clouds":0},{"dt":1399831200,"temp":{"day":285.66,"min":276.26,"max":287.18,"night":277.02,"eve":287.18,"morn":276.26},"pressure":807.06,"humidity":0,"weather":[{"id":501,"main":"Rain","description":"moderate rain","icon":"10d"}],"speed":5.35,"deg":159,"clouds":76,"rain":3.41},{"dt":1399917600,"temp":{"day":287.56,"min":273.78,"max":287.83,"night":278.38,"eve":287.83,"morn":273.78},"pressure":808.3,"humidity":0,"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10d"}],"speed":2.06,"deg":185,"clouds":4,"rain":1.65},{"dt":1400004000,"temp":{"day":285.66,"min":274.06,"max":288.93,"night":278.29,"eve":288.93,"morn":274.06},"pressure":816.22,"humidity":0,"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10d"}],"speed":1.67,"deg":54,"clouds":0,"rain":0.34}]}
+    http_version: 
+  recorded_at: Wed, 07 May 2014 14:45:33 GMT
+recorded_with: VCR 2.9.0
