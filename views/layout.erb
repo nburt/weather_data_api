@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link type="text/css" rel="stylesheet" href=<%= url('css/normalize.css') %>>
+  <link type="text/css" rel="stylesheet" href=<%= url('css/stylesheet.css') %>>
   <title>Weather</title>
 </head>
 <body>
-<%= yield %>
+<div id="content_container">
+  <div id="content">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>

@@ -31,5 +31,5 @@ class OpenWeatherSearch
     end
     temperature
   end
-  
+
 end
